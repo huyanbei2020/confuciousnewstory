@@ -71,9 +71,14 @@ def build():
     edits = json.loads(editorial_path.read_text())['edits'] if editorial_path.exists() else []
     edit_index = {(e['book'], e['paragraph']): e for e in edits}
     applied = set()
+    zhengyi_path = ROOT / 'sources/zhengyi-collation.json'
+    zhengyi = json.loads(zhengyi_path.read_text()) if zhengyi_path.exists() else None
+    zhengyi_index = {p['paragraph']: p for p in zhengyi['paragraphs']} if zhengyi else {}
     for source in json.loads((ROOT / 'sources/manifest.json').read_text()):
         data = (ROOT / 'sources' / source['file']).read_bytes()
         assert hashlib.sha256(data).hexdigest() == source['sha256'], source['id']
+        if source['id'] == 'zhengyi' and zhengyi:
+            assert hashlib.sha256(data).hexdigest() == zhengyi['source_sha256']
         (downloads / source['file']).write_bytes(data)
         chapters = []
         count = 0
@@ -90,12 +95,23 @@ def build():
                     assert hashlib.sha256(paragraph['text'].encode()).hexdigest() == edit['before_sha256'], key
                     paragraph.update(text=edit['text'], layer=edit['layer'], reference=edit['reference'], collation=edit['status'])
                     applied.add(key)
+                if source['id'] == 'zhengyi' and zhengyi:
+                    record = zhengyi_index[paragraph['id']]
+                    assert record['section'] == f's{len(chapters)}'
+                    assert hashlib.sha256(paragraph['text'].encode()).hexdigest() == record['before_sha256']
+                    parts = [{'text': p['text'], 'layer': p['layer']} for p in record['parts']]
+                    paragraph.update(text=''.join(p['text'] for p in parts), parts=parts,
+                                     layer=record['layer'], reference=record['reference'],
+                                     reference_label=record['reference_label'])
                 count += 1
             chapters.append({'id': f's{len(chapters)}', 'title': title, 'paragraphs': paragraphs})
         metadata = dict(source, sections=len(chapters), paragraphs=count,
                         characters=sum(len(p['text']) for s in chapters for p in s['paragraphs']))
         if any(e['book'] == source['id'] for e in edits):
             metadata['note'] += '；部分经文与署名解说已据识典逐字对齐补标点、标层次，属初校，非全书校定'
+        if source['id'] == 'zhengyi' and zhengyi:
+            assert count == len(zhengyi_index)
+            metadata['note'] += '；已与东里排版文字逐卷核对，恢复经文、集解注、正义疏及序文边界，修正明确标点；同源核对不等于独立底本校勘'
         (OUT / f"{source['id']}.json").write_text(json.dumps(dict(metadata, chapters=chapters), ensure_ascii=False))
         catalog.append(metadata)
     assert applied == set(edit_index), 'Unapplied editorial corrections'

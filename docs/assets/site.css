@@ -5,3 +5,5 @@
 
 /* Slightly larger desktop navigation, including search. */
 @media(min-width:951px){#navigation a,.header-actions .icon-link{font-size:14px}}
+
+.text-part+.text-part{margin-top:22px}.text-part[data-kind=经] p{color:#28382d}.text-part[data-kind=注]{padding-left:18px;border-left:1px solid #b7b3a5}.text-part[data-kind=疏] p{color:#59604f}

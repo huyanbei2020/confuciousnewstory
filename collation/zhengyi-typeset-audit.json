@@ -1,0 +1,372 @@
+{
+  "scope": "同源排版文字全卷核对；非独立底本全文校勘",
+  "reference": "https://www.donglishuzhai.net/books/lunyuzhengyi.html",
+  "counts": {
+    "split_paragraphs": 1017,
+    "relabeled_paragraphs": 3071,
+    "display_parts": 4723,
+    "text_changed_paragraphs": 60,
+    "comma_fixes": 15,
+    "title_bracket_fixes": 49,
+    "note_bracket_fixes": 1
+  },
+  "volumes": [
+    {
+      "section": "s0",
+      "title": "凡例",
+      "url": "https://www.donglishuzhai.net/chapter/474.html",
+      "html_sha256": "95fa398fe3c74a3de0fa1535080fbd09d44a4a17daadcc917cf85516427d2207",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 3,
+      "display_parts": 12
+    },
+    {
+      "section": "s1",
+      "title": "卷一·學而第一",
+      "url": "https://www.donglishuzhai.net/chapter/475.html",
+      "html_sha256": "a92f9dbbeb4d3a997b2e4a65b6d5e889e0b94c6d2ededd510032c659f56a4154",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 142,
+      "display_parts": 188
+    },
+    {
+      "section": "s2",
+      "title": "卷二·爲政第二",
+      "url": "https://www.donglishuzhai.net/chapter/661.html",
+      "html_sha256": "09cf8a4fdd8ae80ee795a4b9b5fff45ecbd53e746e0c93d9fbf422ec26eeb4fb",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 180,
+      "display_parts": 262
+    },
+    {
+      "section": "s3",
+      "title": "卷三·八佾第三（上）",
+      "url": "https://www.donglishuzhai.net/chapter/662.html",
+      "html_sha256": "0ba5acf019c208be890e3a19605f48e4d2f0b9b2d88f87b50b85ec9f4d73c780",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 118,
+      "display_parts": 170
+    },
+    {
+      "section": "s4",
+      "title": "卷四·八佾第三（下）",
+      "url": "https://www.donglishuzhai.net/chapter/663.html",
+      "html_sha256": "de52240152495414b94ee0278aca7cfcb7cfe08930dcc3f02ec2d2f19857b4d4",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 85,
+      "display_parts": 113
+    },
+    {
+      "section": "s5",
+      "title": "卷五·里仁第四",
+      "url": "https://www.donglishuzhai.net/chapter/664.html",
+      "html_sha256": "65f331e1aa2675229b74fac5bbec27e98476b1584ef2813a7dcf65e6ee5a1f0c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 107,
+      "display_parts": 177
+    },
+    {
+      "section": "s6",
+      "title": "卷六·公冶長第五",
+      "url": "https://www.donglishuzhai.net/chapter/665.html",
+      "html_sha256": "7e598c7b74e2dfafcab5e1bc8ba22ffafc4b77cb0942ff914c0c8bcde31adbd6",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 197,
+      "display_parts": 265
+    },
+    {
+      "section": "s7",
+      "title": "卷七·雍也第六",
+      "url": "https://www.donglishuzhai.net/chapter/666.html",
+      "html_sha256": "974ce49eae1574aad4d828587da496a2035b77012c813cb11b9d691b1370c56b",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 198,
+      "display_parts": 276
+    },
+    {
+      "section": "s8",
+      "title": "卷八·述而第七",
+      "url": "https://www.donglishuzhai.net/chapter/667.html",
+      "html_sha256": "59ec7fb08efc059e35efa6a0c8c85867ede1fdd05a8a3645c476733925610e5c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 91,
+      "display_parts": 249
+    },
+    {
+      "section": "s9",
+      "title": "卷九·泰伯第八",
+      "url": "https://www.donglishuzhai.net/chapter/668.html",
+      "html_sha256": "97fcceb017bbaf7f749dee8e4930df768226f9c2ff1e51f35eea1e032795455c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 152,
+      "display_parts": 210
+    },
+    {
+      "section": "s10",
+      "title": "卷十·子罕第九",
+      "url": "https://www.donglishuzhai.net/chapter/669.html",
+      "html_sha256": "9f7c93a5f2823e4e2db332d082a92e155fd6428280753e5128fca9fbb030dde7",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 194,
+      "display_parts": 273
+    },
+    {
+      "section": "s11",
+      "title": "卷十一·鄉黨第十（上）",
+      "url": "https://www.donglishuzhai.net/chapter/670.html",
+      "html_sha256": "3002d224ccb97bc5b5560340e35a404cf785ecbc2b2556a569751a30ce891177",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 72,
+      "display_parts": 101
+    },
+    {
+      "section": "s12",
+      "title": "卷十二·鄉黨第十（中）",
+      "url": "https://www.donglishuzhai.net/chapter/671.html",
+      "html_sha256": "8a7d43680d92125bd6b92e9f04239b1a959d4599cf1c24cd93871a7e3bc34936",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 43,
+      "display_parts": 69
+    },
+    {
+      "section": "s13",
+      "title": "卷十三·鄉黨第十（下）",
+      "url": "https://www.donglishuzhai.net/chapter/672.html",
+      "html_sha256": "be163d3e799b398d80ce792a236012705afe2f498da057b5567835e1826981cd",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 114,
+      "display_parts": 171
+    },
+    {
+      "section": "s14",
+      "title": "卷十四·先進第十一",
+      "url": "https://www.donglishuzhai.net/chapter/3767.html",
+      "html_sha256": "32e2dbbce46d00565b0c95ca2a1df36d2f6b59ea8660e88440f198cd60981c5c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 102,
+      "display_parts": 269
+    },
+    {
+      "section": "s15",
+      "title": "卷十五·顏淵第十二",
+      "url": "https://www.donglishuzhai.net/chapter/3768.html",
+      "html_sha256": "020fba2e7f01f7467d338b2d723a196cd7abb2250c38779dd5350db9b23d56fd",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 100,
+      "display_parts": 209
+    },
+    {
+      "section": "s16",
+      "title": "卷十六·子路第十三",
+      "url": "https://www.donglishuzhai.net/chapter/3769.html",
+      "html_sha256": "4f42372dda58a97ef496982d6d153a1fb523dc91d06e5b9c288f110a6f69e7c1",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 168,
+      "display_parts": 226
+    },
+    {
+      "section": "s17",
+      "title": "卷十七·憲問第十四",
+      "url": "https://www.donglishuzhai.net/chapter/3770.html",
+      "html_sha256": "0d9f0e8bd8f0c663a4305d1806c2cf5c3fdeaff1a2c6d72ea0ba4b09110054e5",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 233,
+      "display_parts": 353
+    },
+    {
+      "section": "s18",
+      "title": "卷十八·衛靈公第十五",
+      "url": "https://www.donglishuzhai.net/chapter/3782.html",
+      "html_sha256": "dab93db1563f304167020d965b7b478d6a7bfb607decba25a1d22809499f6ebb",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 169,
+      "display_parts": 241
+    },
+    {
+      "section": "s19",
+      "title": "卷十九·季氏第十六",
+      "url": "https://www.donglishuzhai.net/chapter/3783.html",
+      "html_sha256": "56810c98b7c444cd72af41e29e974b4b78a2ccdad15c8b62aedc5a3cb2fb88cb",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 122,
+      "display_parts": 170
+    },
+    {
+      "section": "s20",
+      "title": "卷二十·陽貨第十七",
+      "url": "https://www.donglishuzhai.net/chapter/3876.html",
+      "html_sha256": "b625cbd77f6be4d6840f0b4c3b3b61534023fc68a3e1a23b4fd59ae5de209e5c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 171,
+      "display_parts": 252
+    },
+    {
+      "section": "s21",
+      "title": "卷二十一·微子第十八",
+      "url": "https://www.donglishuzhai.net/chapter/3877.html",
+      "html_sha256": "d9070740ecbddbefbecf1154b17af98dddf921b8fa5807b2422002120ac23e1c",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 117,
+      "display_parts": 161
+    },
+    {
+      "section": "s22",
+      "title": "卷二十二·子張第十九",
+      "url": "https://www.donglishuzhai.net/chapter/3878.html",
+      "html_sha256": "876f714b8b393d9d88f8bdc9fe003b2672d057e49176986c3aed8835eba24618",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 99,
+      "display_parts": 146
+    },
+    {
+      "section": "s23",
+      "title": "卷二十三·堯曰第二十",
+      "url": "https://www.donglishuzhai.net/chapter/3879.html",
+      "html_sha256": "90d9051f3080e074df7f06551fecce06074607c34cfd50ba2e5c1c35bf946c50",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 71,
+      "display_parts": 97
+    },
+    {
+      "section": "s24",
+      "title": "卷二十四·何晏論語序",
+      "url": "https://www.donglishuzhai.net/chapter/3880.html",
+      "html_sha256": "d737fac3f8db5ac4cb5fdfa93d7ca2edbdb86aa04a66177a02c3af7b9dceb1db",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 19,
+      "display_parts": 46
+    },
+    {
+      "section": "s25",
+      "title": "附録·鄭玄論語序逸文",
+      "url": "https://www.donglishuzhai.net/chapter/3881.html",
+      "html_sha256": "48339148d202204c160c820ce797e6774110dadebe339ae94246f21984c97bb8",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 4,
+      "display_parts": 12
+    },
+    {
+      "section": "s26",
+      "title": "劉恭冕後敍",
+      "url": "https://www.donglishuzhai.net/chapter/3882.html",
+      "html_sha256": "268ccb745cc950e7ced07780bf6261e97742e97c56c7ac584bb99f8bfa07a8ba",
+      "source_kind": "本地已保存的东里完整HTML；本轮网上重新定位并抽核",
+      "comparison": "全卷逐字及标点相同（仅忽略空白、排版斜线及圆括号全半角）",
+      "paragraphs": 1,
+      "display_parts": 5
+    }
+  ],
+  "examples": [
+    {
+      "section": "s0",
+      "paragraph": "p0",
+      "before_layer": "正文／解说",
+      "layers": [
+        "篇题／署名",
+        "篇题／署名",
+        "凡例"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/474.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p4",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "篇题／章数",
+        "疏 · 正义",
+        "篇题／章数",
+        "疏 · 正义"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p19",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "经文"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p27",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "经文"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p40",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "经文"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p49",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "经文"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p55",
+      "before_layer": "疏解 · 正義曰",
+      "layers": [
+        "疏 · 正义",
+        "经文"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    },
+    {
+      "section": "s1",
+      "paragraph": "p67",
+      "before_layer": "注 · 馬曰",
+      "layers": [
+        "注 · 集解",
+        "疏 · 正义"
+      ],
+      "reference": "https://www.donglishuzhai.net/chapter/475.html"
+    }
+  ],
+  "remaining_checks": []
+}
