@@ -2,3 +2,6 @@
 @media(max-width:760px){.book-row{grid-template-columns:25px 1fr 18px;gap:12px;padding:24px 0}.book-row h3{font-size:23px;letter-spacing:1px}.shelf-meta{display:none}.reading-body{padding:22px 19px}.reader-heading h1{font-size:27px}.chapter-list{max-height:210px;overflow:auto}.compare-grid{grid-template-columns:1fr}.compare-pane .reading-body{height:50vh}.page-top{display:block}.reader-toolbar .progress{width:100%;margin:0}.hero h1{font-size:47px}.reader-nav{font-size:12px}.bookmark-row{gap:10px}.home-section{padding-top:65px}}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:640px){.hero h1{font-size:clamp(28px,9.4vw,37px);letter-spacing:.1em;padding-left:.1em}.hero-content{width:100%}}
+
+/* Slightly larger desktop navigation, including search. */
+@media(min-width:951px){#navigation a,.header-actions .icon-link{font-size:14px}}
