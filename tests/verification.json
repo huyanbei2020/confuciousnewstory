@@ -17,6 +17,10 @@
     "Desktop homepage inspected",
     "Search 学而时习之: 36 matching paragraphs",
     "Search result opens yishu/s3/p33 with highlight 學而時習之",
-    "Bookmark create/read/remove passed"
+    "Bookmark create/read/remove passed",
+    "390px mobile homepage: no horizontal overflow",
+    "Mobile navigation open/Escape close passed",
+    "Compare panes render with no duplicate DOM IDs",
+    "Browser console: no warnings or errors"
   ]
 }
