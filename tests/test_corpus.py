@@ -18,7 +18,13 @@ class CorpusTests(unittest.TestCase):
             self.assertEqual(len(blocks), len(set(p['id'] for p in blocks)))
             self.assertTrue(all(p['text'] for p in blocks))
             self.assertEqual(sum(len(p['text']) for p in blocks), b['characters'])
-            self.assertTrue(all(p['text'] in source.decode('utf-8') for p in blocks))
+            edits = {(e['book'], e['paragraph']): e for e in json.loads((ROOT/'sources/editorial.json').read_text())['edits']}
+            for p in blocks:
+                edit = edits.get((b['id'], p['id']))
+                self.assertIn(edit['before'] if edit else p['text'], source.decode('utf-8'))
+                if edit:
+                    self.assertEqual(p['text'], edit['text'])
+                    self.assertEqual(p['reference'], edit['reference'])
 
     def test_complete_volumes(self):
         def titles(book):
@@ -58,3 +64,16 @@ class CorpusTests(unittest.TestCase):
         paragraphs = [p['text'] for c in data['chapters'] for p in c['paragraphs']]
         self.assertTrue(any(p.startswith('【〔注〕馬曰') for p in paragraphs))
         self.assertFalse(any('最後更新時間' in p for p in paragraphs))
+
+    def test_editorial_changes_preserve_all_original_characters(self):
+        import unicodedata
+        def lexical(text):
+            return ''.join(c for c in text if not c.isspace() and not unicodedata.category(c).startswith('P'))
+        edits = json.loads((ROOT/'sources/editorial.json').read_text())['edits']
+        self.assertTrue(edits)
+        self.assertEqual(len(edits),len({(e['book'],e['paragraph']) for e in edits}))
+        for e in edits:
+            self.assertEqual(hashlib.sha256(e['before'].encode()).hexdigest(),e['before_sha256'])
+            self.assertEqual(lexical(e['before']),lexical(e['text']))
+            self.assertTrue(e['reference'].startswith('https://www.shidianguji.com/book/SK0542/chapter/'))
+            self.assertEqual(e['layer'],'经文' if e['paragraph'] in ('p15','p22') else '诸家解说')

@@ -53,3 +53,23 @@ Node 测试要求 Node 22 或更新版本；构建只需 Python 标准库。
 样式、江南水墨背景、宣纸纹理、字体来自用户指定的 Carrot 本地项目。原 Carrot 项目已拉取并合并远端更新，保留原有本地校读提交。未拷贝其密钥、后端、问答接口或其他文献数据。
 
 字体许可见 `docs/assets/fonts/LICENSE.noto`；OpenCC 字形映射许可及来源见 `docs/assets/vendor/`。古籍录文的具体底本与待校状态见网站“资料说明”。
+
+## 识典参照初校（2026-10-22）
+
+尚未完成五部书的逐句校定。`collation/report.html` 是全库导入原稿的检查报告；`issues.csv` 和每书的 `*-audit.json` 保留段号、缺字、层次疑点、对齐结果及参照链接。未对齐不等于原文错误，可能来自版本、分段或参照缺页。
+
+本轮只对《论孟精义》逐字归一对齐、署名明确的解说及另行核对的两段经文补标点、标层次，保存于 `sources/editorial.json`。所有原字和原始下载保留；构建时检查修改前哈希。阅读页逐段链接识典，并注明初校。《朱子语类》原来的“经文／引经”提示改为“语录 · 引文（待核）”，避免把语录中的引文误作独立经文。
+
+《论语义疏》识典参照为大阪怀德堂纪念会本，与本地四库系统整理稿底本不同，且参照 OCR 有明显讹误；不可整体替换。《论语正义》尚未找到刘宝楠、刘恭冕本的独立识典书页，未用其他同名或近名书替代。其他书的经注分界、异文、缺字及未对齐段落仍待逐项核对。
+
+复核工具（仅读取公开章页，不使用登录或私有接口）：
+
+```sh
+python3 scripts/collation/fetch_shidian.py
+python3 scripts/collation/audit.py
+python3 scripts/collation/prepare_corrections.py
+python3 scripts/build.py
+python3 -m unittest discover -s tests
+```
+
+公开参照缓存放在忽略目录 `.local/shidian/reference/`，包含抓取时间和页面哈希。覆盖率及缺页原因写入报告；页面内容或目录更新后，重新读取的结果可能不同。`prepare_corrections.py` 只是保守的初校辅助，不能证明识典的标点正确。

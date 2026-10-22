@@ -1,0 +1,145 @@
+[
+  {
+    "id": "yishu",
+    "title": "论语义疏",
+    "characters": 229214,
+    "paragraphs": 2904,
+    "comparison": {
+      "短句需结合上下文定位": 856,
+      "未逐字对齐（异文/漏字/重排/参照缺页待核）": 1917,
+      "字形归一后逐字对齐": 129,
+      "同文多处出现，定位待核": 2
+    },
+    "issues": {
+      "标点/断句与参照不同，待核": 81,
+      "私用区缺字编码": 240,
+      "缺字或替代符": 7
+    },
+    "reference": {
+      "book": "NA01081",
+      "version": 1,
+      "edition": {
+        "edition": "大正12年大阪懷德堂紀念會鉛印本",
+        "editionDynastyName": "民国"
+      },
+      "expected_paragraphs": 5595,
+      "received_paragraphs": 5595,
+      "complete_chapters": 13,
+      "chapters": 13,
+      "failures": []
+    },
+    "source_sha256": "9c916de7dbe0ae3fdf1ddf09f57ff06c9f8c653cdeba97d59c3d2eafc75b33fb"
+  },
+  {
+    "id": "sishu",
+    "title": "四书章句集注",
+    "characters": 256461,
+    "paragraphs": 1048,
+    "comparison": {
+      "短句需结合上下文定位": 68,
+      "未逐字对齐（异文/漏字/重排/参照缺页待核）": 900,
+      "字形归一后逐字对齐": 80
+    },
+    "issues": {
+      "未分层": 1048,
+      "标点/断句与参照不同，待核": 77,
+      "私用区缺字编码": 3
+    },
+    "reference": {
+      "book": "SK0540",
+      "version": 36,
+      "edition": {
+        "edition": "四庫全書本",
+        "editionDynastyName": "清"
+      },
+      "expected_paragraphs": 310,
+      "received_paragraphs": 310,
+      "complete_chapters": 96,
+      "chapters": 96,
+      "failures": []
+    },
+    "source_sha256": "e40ac2ca6985c9d43ccaf3642fc014773f4dcb35475325c704a05b2dd0eec33c"
+  },
+  {
+    "id": "yulei",
+    "title": "朱子语类",
+    "characters": 1968135,
+    "paragraphs": 3279,
+    "comparison": {
+      "未逐字对齐（异文/漏字/重排/参照缺页待核）": 2764,
+      "字形归一后逐字对齐": 123,
+      "短句需结合上下文定位": 368,
+      "同文多处出现，定位待核": 24
+    },
+    "issues": {
+      "标点/断句与参照不同，待核": 115,
+      "语录引经不宜直接标作独立经文": 285,
+      "私用区缺字编码": 43,
+      "缺字或替代符": 6
+    },
+    "reference": {
+      "book": "SK1308",
+      "version": 59,
+      "edition": {
+        "edition": "四庫全書本",
+        "editionDynastyName": "清"
+      },
+      "expected_paragraphs": 15639,
+      "received_paragraphs": 15637,
+      "complete_chapters": 1357,
+      "chapters": 1358,
+      "failures": [
+        {
+          "url": "https://www.shidianguji.com/book/SK1308/chapter/1lxza6gf5lrmj",
+          "reason": "HTML contains no readable chapter data"
+        }
+      ]
+    },
+    "source_sha256": "b42550aba8c7dd29fc322c7b6bd49c5024bef8d1fbe1bbbdc3817b75e7a5cf2a"
+  },
+  {
+    "id": "jingyi",
+    "title": "论孟精义",
+    "characters": 299516,
+    "paragraphs": 4046,
+    "comparison": {
+      "短句需结合上下文定位": 520,
+      "未逐字对齐（异文/漏字/重排/参照缺页待核）": 1491,
+      "字形归一后逐字对齐": 2021,
+      "同文多处出现，定位待核": 14
+    },
+    "issues": {
+      "未分层": 4046,
+      "长段缺少句读": 800,
+      "私用区缺字编码": 168,
+      "标点/断句与参照不同，待核": 1972,
+      "缺字或替代符": 1
+    },
+    "reference": {
+      "book": "SK0542",
+      "version": 13,
+      "edition": {
+        "edition": "四庫全書本",
+        "editionDynastyName": "清"
+      },
+      "expected_paragraphs": 4087,
+      "received_paragraphs": 4087,
+      "complete_chapters": 254,
+      "chapters": 254,
+      "failures": []
+    },
+    "source_sha256": "f132fbba7a88bb21bb63e6345ebc14428c4112921201a4a9581979264cefcbcc"
+  },
+  {
+    "id": "zhengyi",
+    "title": "论语正义",
+    "characters": 602998,
+    "paragraphs": 3072,
+    "comparison": {
+      "未取得识典参照": 3072
+    },
+    "issues": {},
+    "reference": null,
+    "source_sha256": "24611117b76cdc29fb048d1425ca6fcb188376a86d777279faec9d2a7eef1dcd"
+  }
+]

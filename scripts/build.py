@@ -67,6 +67,10 @@ def build():
     downloads = ROOT / 'docs/texts'
     downloads.mkdir(exist_ok=True)
     catalog = []
+    editorial_path = ROOT / 'sources/editorial.json'
+    edits = json.loads(editorial_path.read_text())['edits'] if editorial_path.exists() else []
+    edit_index = {(e['book'], e['paragraph']): e for e in edits}
+    applied = set()
     for source in json.loads((ROOT / 'sources/manifest.json').read_text()):
         data = (ROOT / 'sources' / source['file']).read_bytes()
         assert hashlib.sha256(data).hexdigest() == source['sha256'], source['id']
@@ -79,12 +83,22 @@ def build():
                 continue
             for paragraph in paragraphs:
                 paragraph['id'] = f'p{count}'
+                key = (source['id'], paragraph['id'])
+                if key in edit_index:
+                    edit = edit_index[key]
+                    assert edit['section'] == f's{len(chapters)}', key
+                    assert hashlib.sha256(paragraph['text'].encode()).hexdigest() == edit['before_sha256'], key
+                    paragraph.update(text=edit['text'], layer=edit['layer'], reference=edit['reference'], collation=edit['status'])
+                    applied.add(key)
                 count += 1
             chapters.append({'id': f's{len(chapters)}', 'title': title, 'paragraphs': paragraphs})
         metadata = dict(source, sections=len(chapters), paragraphs=count,
                         characters=sum(len(p['text']) for s in chapters for p in s['paragraphs']))
+        if any(e['book'] == source['id'] for e in edits):
+            metadata['note'] += '；部分经文与署名解说已据识典逐字对齐补标点、标层次，属初校，非全书校定'
         (OUT / f"{source['id']}.json").write_text(json.dumps(dict(metadata, chapters=chapters), ensure_ascii=False))
         catalog.append(metadata)
+    assert applied == set(edit_index), 'Unapplied editorial corrections'
     (OUT / 'catalog.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2))
     print('\n'.join(f"{b['title']}: {b['sections']} sections, {b['characters']:,} characters" for b in catalog))
 
