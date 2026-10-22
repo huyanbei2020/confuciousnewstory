@@ -52,16 +52,16 @@
     "characters": 299516
   },
   {
-    "id": "jijie",
-    "title": "论语集解",
-    "author": "魏 · 何晏等",
-    "description": "循汉魏旧注，回到字句与名物。",
-    "source": "历代论语注解整理/连续标点本/KR1h0005_魏_何晏等_論語集解_连续标点本.md",
-    "file": "jijie.md",
-    "note": "四部丛刊景日本正平刊本电子录文，自动标点初稿，待逐字复核",
-    "sha256": "10e6a17c21d843ed8b9fbcd5fb4abce8df592f3d4bf1e0292b667196d405307b",
-    "sections": 11,
-    "paragraphs": 2248,
-    "characters": 48488
+    "id": "zhengyi",
+    "title": "论语正义",
+    "author": "清 · 刘宝楠、刘恭冕",
+    "description": "汇通汉学，考字义、辨名物、明制度。",
+    "source": "历代论语注解整理/连续标点本/LIU_BAONAN_清_刘宝楠 刘恭冕_論語正義_连续标点本.md",
+    "file": "zhengyi.md",
+    "note": "本地保存的东里书斋电子录文连续整理稿；含二十四卷、凡例及附录，沿用来源标点，待逐字校勘",
+    "sha256": "24611117b76cdc29fb048d1425ca6fcb188376a86d777279faec9d2a7eef1dcd",
+    "sections": 27,
+    "paragraphs": 3072,
+    "characters": 602998
   }
 ]

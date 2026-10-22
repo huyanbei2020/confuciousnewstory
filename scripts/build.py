@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/data'
 
 def sections(raw, book):
-    if book in ('yishu', 'jijie', 'yulei'):
+    if book in ('yishu', 'zhengyi', 'yulei'):
         parts = re.split(r'(?m)^## (.+)\n', raw)
         return [(parts[i], parts[i+1]) for i in range(1, len(parts), 2)
                 if parts[i] not in ('整理说明', '题名')]
@@ -40,13 +40,16 @@ def sections(raw, book):
         result.append((title, '\n'.join(buf)))
     return result
 
-def blocks(text):
+def blocks(text, book=None):
     layer, result = '', []
     for line in text.splitlines():
         line = line.strip()
+        if book == 'zhengyi':
+            # Remove the source website footer, preserving all preceding classical text.
+            line = re.sub(r'字數：\d+，最後更新時間：.*$', '', line)
         if not line or re.fullmatch(r'PAGE\s+.*MERGEFORMAT.*', line):
             continue
-        if (line.startswith('**〔') and line.endswith('〕**')) or (line.startswith('【') and line.endswith('】')):
+        if (line.startswith('**〔') and line.endswith('〕**')) or (book != 'zhengyi' and line.startswith('【') and line.endswith('】')):
             layer = line.strip('*【】〔〕')
             continue
         # Bound DOM size without dropping or rewriting text; join fragments to reconstruct each line.
@@ -71,7 +74,7 @@ def build():
         chapters = []
         count = 0
         for title, body in sections(data.decode('utf-8-sig'), source['id']):
-            paragraphs = blocks(body)
+            paragraphs = blocks(body, source['id'])
             if not paragraphs:
                 continue
             for paragraph in paragraphs:

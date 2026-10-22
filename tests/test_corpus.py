@@ -28,7 +28,33 @@ class CorpusTests(unittest.TestCase):
         self.assertEqual(sum(t.startswith('论语精义') for t in titles('jingyi')), 20)
         self.assertEqual(sum(t.startswith('孟子精义') for t in titles('jingyi')), 14)
         self.assertEqual(sum(t.startswith('卷') for t in titles('yishu')), 10)
-        self.assertEqual(sum(t.startswith('卷') for t in titles('jijie')), 10)
+        self.assertEqual(sum(t.startswith('卷') for t in titles('zhengyi')), 24)
+        self.assertEqual(len(titles('zhengyi')), 27)
+        self.assertIn('附録·鄭玄論語序逸文', titles('zhengyi'))
+        self.assertEqual(titles('zhengyi')[-1], '劉恭冕後敍')
         self.assertIn('大学章句', titles('sishu'))
         self.assertIn('中庸章句', titles('sishu'))
         self.assertTrue(any('尽心章句下' in t for t in titles('sishu')))
+
+    def test_replacement_preserves_annotations_and_removes_old_book(self):
+        import re
+        import sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from build import sections
+        catalog = json.loads((ROOT/'docs/data/catalog.json').read_text())
+        self.assertIn('zhengyi', [b['id'] for b in catalog])
+        self.assertNotIn('jijie', [b['id'] for b in catalog])
+        for filename in ('sources/jijie.md', 'docs/texts/jijie.md', 'docs/data/jijie.json'):
+            self.assertFalse((ROOT/filename).exists())
+        raw = (ROOT/'sources/zhengyi.md').read_text()
+        data = json.loads((ROOT/'docs/data/zhengyi.json').read_text())
+        source_sections = sections(raw, 'zhengyi')
+        self.assertEqual(len(source_sections), len(data['chapters']))
+        for (_, body), chapter in zip(source_sections, data['chapters']):
+            lines = [re.sub(r'字數：\d+，最後更新時間：.*$', '', line.strip()) for line in body.splitlines()]
+            expected = ''.join(line for line in lines if not (line.startswith('**〔') and line.endswith('〕**')))
+            actual = ''.join(p['text'] for p in chapter['paragraphs'])
+            self.assertEqual(actual, expected)
+        paragraphs = [p['text'] for c in data['chapters'] for p in c['paragraphs']]
+        self.assertTrue(any(p.startswith('【〔注〕馬曰') for p in paragraphs))
+        self.assertFalse(any('最後更新時間' in p for p in paragraphs))
