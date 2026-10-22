@@ -1,0 +1,52 @@
+[
+  {
+    "id": "yishu",
+    "title": "论语义疏",
+    "author": "梁 · 皇侃",
+    "description": "经、注、疏相承，读六朝义理。",
+    "source": "本地读书班文献整理/专项校对/论语义疏_经注疏分层对校稿.md",
+    "file": "yishu.md",
+    "note": "本地经注疏分层对校稿；据殆知阁录文改字，字形与句读待核",
+    "sha256": "9c916de7dbe0ae3fdf1ddf09f57ff06c9f8c653cdeba97d59c3d2eafc75b33fb"
+  },
+  {
+    "id": "sishu",
+    "title": "四书章句集注",
+    "author": "宋 · 朱熹",
+    "description": "由《大学》《中庸》，入《论语》《孟子》。",
+    "source": "历代论语注解整理/原始网页/续补/殆知阁/四书章句集注.txt",
+    "file": "sishu.txt",
+    "note": "本地保存的殆知阁电子录文，含四书正文及附录，待逐字校勘",
+    "sha256": "e40ac2ca6985c9d43ccaf3642fc014773f4dcb35475325c704a05b2dd0eec33c"
+  },
+  {
+    "id": "yulei",
+    "title": "朱子语类",
+    "author": "宋 · 朱熹语 / 黎靖德编",
+    "description": "一百四十卷问答，寻思辨的来路。",
+    "source": "本地读书班文献整理/连续文档/ZHUZI_YULEI.md",
+    "file": "yulei.md",
+    "note": "本地 Word 全一百四十卷整理稿，沿用原标点，待校勘",
+    "sha256": "b42550aba8c7dd29fc322c7b6bd49c5024bef8d1fbe1bbbdc3817b75e7a5cf2a"
+  },
+  {
+    "id": "jingyi",
+    "title": "论孟精义",
+    "author": "宋 · 朱熹",
+    "description": "汇集诸家之说，在异同之间求义。",
+    "source": "历代论语注解整理/原始网页/续补/殆知阁/论孟精义.txt",
+    "file": "jingyi.txt",
+    "note": "本地保存的殆知阁电子录文；论语二十卷、孟子十四卷，异体及缺字待核",
+    "sha256": "f132fbba7a88bb21bb63e6345ebc14428c4112921201a4a9581979264cefcbcc"
+  },
+  {
+    "id": "jijie",
+    "title": "论语集解",
+    "author": "魏 · 何晏等",
+    "description": "循汉魏旧注，回到字句与名物。",
+    "source": "历代论语注解整理/连续标点本/KR1h0005_魏_何晏等_論語集解_连续标点本.md",
+    "file": "jijie.md",
+    "note": "四部丛刊景日本正平刊本电子录文，自动标点初稿，待逐字复核",
+    "sha256": "10e6a17c21d843ed8b9fbcd5fb4abce8df592f3d4bf1e0292b667196d405307b"
+  }
+]

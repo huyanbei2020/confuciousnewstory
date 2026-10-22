@@ -1,0 +1,7 @@
+{
+  "source": "https://raw.githubusercontent.com/BYVoid/OpenCC/f509f2f0ed60cf670f44796a5da3746d974e8892/data/dictionary/TSCharacters.txt",
+  "commit": "f509f2f0ed60cf670f44796a5da3746d974e8892",
+  "sha256": "9ff46a7d30e5765375eb13d33f2b03a34d298913caf2b120380679f33ae1642d",
+  "entries": 3221,
+  "transformation": "Keep first candidate only for one-code-point keys and values; omit identity mappings. Search normalization only, not contextual text conversion."
+}

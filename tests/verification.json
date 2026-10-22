@@ -1,0 +1,22 @@
+{
+  "corpus_books": 5,
+  "characters": 2801814,
+  "checks": [
+    "Five source SHA-256 hashes and byte-identical downloads",
+    "140 Yulei volumes",
+    "20 Lunyu + 14 Mengzi Jingyi volumes",
+    "10 Yishu + 10 Jijie volumes",
+    "All four Sishu works retained",
+    "Every reading fragment present verbatim in source",
+    "Simplified/traditional search equivalence",
+    "Search scope and pagination",
+    "Result paragraph references",
+    "Empty/no-match queries"
+  ],
+  "browser": [
+    "Desktop homepage inspected",
+    "Search 学而时习之: 36 matching paragraphs",
+    "Search result opens yishu/s3/p33 with highlight 學而時習之",
+    "Bookmark create/read/remove passed"
+  ]
+}

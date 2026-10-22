@@ -1,0 +1,89 @@
+"""Build portable, source-traceable reading data with Python's standard library."""
+from pathlib import Path
+import hashlib
+import json
+import re
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'docs/data'
+
+def sections(raw, book):
+    if book in ('yishu', 'jijie', 'yulei'):
+        parts = re.split(r'(?m)^## (.+)\n', raw)
+        return [(parts[i], parts[i+1]) for i in range(1, len(parts), 2)
+                if parts[i] not in ('整理说明', '题名')]
+    result, title, buf, seen = [], '提要与序' if book == 'jingyi' else '原书目录', [], set()
+    for line in raw.splitlines():
+        clean = line.strip()
+        if book == 'jingyi':
+            key = clean.replace('巻', '卷')
+            heading = bool(re.fullmatch(r'(?:论语|孟子)精义卷[一二三四五六七八九十]+[上下]?', key))
+            if heading and key in seen:
+                continue  # repeated end-of-volume running titles, retained in source download
+            if heading:
+                seen.add(key)
+            if clean.startswith('<经部,'):
+                continue
+        else:
+            heading = bool(re.fullmatch(r'卷[一二三四五六七八九十]+\s+[^卷]+', clean)) or clean in (
+                '大学章句序', '大学章句', '中庸章句序', '中庸章句', '论语序说', '读论语孟子法', '孟子序说') or clean.startswith(('附录一', '附录二'))
+            # The first 33 lines are the original table of contents.
+            if '大学之书' not in '\n'.join(buf) and not result and clean != '大学章句序':
+                heading = False
+        if heading:
+            if buf:
+                result.append((title, '\n'.join(buf)))
+            title, buf = clean, []
+        else:
+            buf.append(line)
+    if buf:
+        result.append((title, '\n'.join(buf)))
+    return result
+
+def blocks(text):
+    layer, result = '', []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or re.fullmatch(r'PAGE\s+.*MERGEFORMAT.*', line):
+            continue
+        if (line.startswith('**〔') and line.endswith('〕**')) or (line.startswith('【') and line.endswith('】')):
+            layer = line.strip('*【】〔〕')
+            continue
+        # Bound DOM size without dropping or rewriting text; join fragments to reconstruct each line.
+        while len(line) > 900:
+            end = max(line.rfind('。', 400, 900), line.rfind('；', 400, 900))
+            end = end + 1 if end >= 400 else 900
+            result.append({'text': line[:end], 'layer': layer})
+            line = line[end:]
+        if line:
+            result.append({'text': line, 'layer': layer})
+    return result
+
+def build():
+    OUT.mkdir(parents=True, exist_ok=True)
+    downloads = ROOT / 'docs/texts'
+    downloads.mkdir(exist_ok=True)
+    catalog = []
+    for source in json.loads((ROOT / 'sources/manifest.json').read_text()):
+        data = (ROOT / 'sources' / source['file']).read_bytes()
+        assert hashlib.sha256(data).hexdigest() == source['sha256'], source['id']
+        (downloads / source['file']).write_bytes(data)
+        chapters = []
+        count = 0
+        for title, body in sections(data.decode('utf-8-sig'), source['id']):
+            paragraphs = blocks(body)
+            if not paragraphs:
+                continue
+            for paragraph in paragraphs:
+                paragraph['id'] = f'p{count}'
+                count += 1
+            chapters.append({'id': f's{len(chapters)}', 'title': title, 'paragraphs': paragraphs})
+        metadata = dict(source, sections=len(chapters), paragraphs=count,
+                        characters=sum(len(p['text']) for s in chapters for p in s['paragraphs']))
+        (OUT / f"{source['id']}.json").write_text(json.dumps(dict(metadata, chapters=chapters), ensure_ascii=False))
+        catalog.append(metadata)
+    (OUT / 'catalog.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2))
+    print('\n'.join(f"{b['title']}: {b['sections']} sections, {b['characters']:,} characters" for b in catalog))
+
+if __name__ == '__main__':
+    build()
